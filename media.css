@@ -1,0 +1,43 @@
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1370px;
+    }
+}
+@media only screen and (min-width:200px) and (max-width:775px) {
+    header nav img {
+        height:50px;
+    }
+    header ul li a{
+        font-size: 2px;
+    }
+    .bannerContent h1{
+        font-size: 20px;
+    }
+    .bannerContent h1 span{
+        font-size: 50px;
+    }
+    .bannerContent .btn{
+        margin-bottom: 10px;
+    }
+    .about h1{
+        font-size: 33px;
+    }
+    .about h3{
+        font-size: 15px;
+    }
+    .about p{
+        font-size: 10px;
+    }
+    .skills h1{
+        font-size: 33px;
+    }
+    .projects h1{
+        font-size: 33px;
+    }
+}
