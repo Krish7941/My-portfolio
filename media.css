@@ -30,6 +30,11 @@
         align-items: center;
         padding: 20px;
     }
+    .flipper{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
     .front,.back{
         width: 80%;
         height:auto;
