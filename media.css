@@ -25,6 +25,9 @@
     .bannerContent .btn{
         margin-bottom: 10px;
     }
+    .flipper{
+        width: 80%;
+    }
     .about h1{
         font-size: 33px;
     }
@@ -41,3 +44,8 @@
         font-size: 33px;
     }
 }
+@media (max-width: 480px) {
+    .flipper {
+      width: 100%;
+    }
+  }
