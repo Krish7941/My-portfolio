@@ -3,13 +3,14 @@ window.onbeforeunload = function () {
 };
 
 
-ScrollReveal({
-  reset: false,
-  distance: '150px',
-  duration: 900,
-  delay: 100,
-  viewFactor: 0.6
-});
+if (window.innerWidth > 800)
+  ScrollReveal({
+    reset: false,
+    distance: '150px',
+    duration: 900,
+    delay: 100,
+    viewFactor: 0.4
+  });
 
 ScrollReveal().reveal('header', { origin: 'top', reset: false });
 ScrollReveal().reveal('.bannerContent', { origin: 'left' });
