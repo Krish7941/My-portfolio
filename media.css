@@ -25,8 +25,20 @@
     .bannerContent .btn{
         margin-bottom: 10px;
     }
-    .flipper{
-        width: 80%;
+    .bannerContent{
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .front,.back{
+        width: 100%;
+        height:auto;
+        border-radius: 8px;
+    }
+    .front img, .back img{
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
     .about h1{
         font-size: 33px;
@@ -35,12 +47,18 @@
         font-size: 15px;
     }
     .about p{
-        font-size: 10px;
+        font-size: 13px;
     }
     .skills h1{
         font-size: 33px;
     }
+    .tech-stack h1{
+        font-size: 33px;
+    }
     .projects h1{
+        font-size: 33px;
+    }
+    .touch h1{
         font-size: 33px;
     }
 }

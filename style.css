@@ -16,19 +16,12 @@ body {
     overflow-x: hidden;
 
 }
-#tsparticles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -5;
-  }
 header {
     position: fixed;
     z-index: 2;
-    backdrop-filter: blur(100px);
-    transition: backdrop-filter 0.3s ease, background 0.3s ease;
+    background: linear-gradient(120deg,#240448);;
+    /* backdrop-filter: blur(100px); */
+    /* transition: backdrop-filter 0.3s ease, background 0.3s ease; */
 }
 
 header ul .nav-item a {
