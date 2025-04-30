@@ -16,6 +16,9 @@ body {
     overflow-x: hidden;
 
 }
+li::marker{
+    color: #834797;
+}
 header {
     position: fixed;
     z-index: 2;
