@@ -4,548 +4,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krish</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Krish Pathak — Frontend Developer</title>
+    <meta name="description"
+        content="Krish Pathak — Frontend developer &amp; B.Tech CS student building clean, responsive interfaces.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="icon" href="assets/icons8-letter-k-64.png">
 </head>
 
 <body>
-    <header class="container-fluid position-sticky top-0">
-        <div class="container position-sticky">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <a href="index.html" class="navbar-brand">
-                            <img src="icons8-letter-k-64.png" height="55px" alt="">
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                            <ul class="navbar-nav gap-3">
-                                <li class="nav-item">
-                                    <a href="#home" class="nav-link">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#about" class="nav-link">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#skills" class="nav-link">Skills</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#projects" class="nav-link">Projects</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#certificates" class="nav-link">Certificates</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#contact" class="nav-link">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav> <!-- This was missing -->
-                </div>
-            </div>
-        </div>
+
+    <div class="cursor-trail" aria-hidden="true"></div>
+    <div class="grid-glow" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a href="#home" class="brand">
+                <span class="dot"></span>
+                krish<span class="path-lo">.dev</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active"><span class="num">00</span>home</a>
+                <a href="#about"><span class="num">01</span>about</a>
+                <a href="#skills"><span class="num">02</span>skills</a>
+                <a href="#projects"><span class="num">03</span>projects</a>
+                <a href="#certificates"><span class="num">04</span>certs</a>
+                <a href="#contact"><span class="num">05</span>contact</a>
+            </nav>
+            <a href="#contact" class="nav-cta">say_hello()</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
         </div>
     </header>
-    <section id="home" class="container-fluid py-lg-5 py-sm-4 py-3 justify-content-center align-items-center fir mt-5">
-        <div class="container">
-            <div class="row justify-content-center mt-5 gy-3 align-items-center">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="bannerContent animate-fade justify-content-center align-items-center">
-                        <div>
-                            <h1>Hii, I'm<span>&nbspKRISH</span>
-                            </h1>
-                            <h1 class="text-center" id="type"></h1>
-                        </div>
-                        <script>
-                            const typeText = "Designer & Developer..";
-                            const typeElement = document.getElementById("type");
-                            let index = 0;
-                            let isTyping = true;
 
-                            function typing() {
-                                if (isTyping) {
-                                    typeElement.textContent = typeText.substring(0, index + 1);
-                                    index++;
-                                    if (index === typeText.length) {
-                                        isTyping = false;
-                                        setTimeout(typing, 1000);
-                                        return;
-                                    }
-                                } else {
-                                    typeElement.textContent = typeText.substring(0, index - 1);
-                                    index--;
-                                    if (index === 0) {
-                                        isTyping = true;
-                                    }
-                                }
-                                setTimeout(typing, isTyping ? 70 : 70);
-                            }
+    <main>
 
-                            document.addEventListener("DOMContentLoaded", typing);
-                        </script>
-                        <div class="row justify-content-start align-items-center">
-                            <div class="col-auto">
-                                <a href="#projects"> <button type="submit" class="btn check mb-1 mt-3">View my Work
-                                    </button></a>
-                            </div>
-                            <div class="col-auto">
-                                <a href="resume.pdf" download="resume.pdf"> <button
-                                        class="btn grad mb-1 mt-3 down">Download Resume</button></a>
-                            </div>
+        <!-- ============ HERO ============ -->
+        <section id="home" class="container hero">
+            <div class="reveal in">
+                <div class="hero-kicker"><span class="blink"></span> available for internships &amp; freelance work
+                </div>
+                <h1>Building interfaces<br>that feel <span class="accent">inevitable</span>,<br>not <span
+                        class="accent2">accidental</span>.</h1>
+                <p class="hero-desc">Hi, I'm <strong>Krish Pathak</strong> — a full stack developer and B.Tech CS
+                    student at GLA University, focused on building responsive, production-ready web applications with
+                    clean HTML, CSS, JavaScript and Tailwind CSS.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                        View my work
+                    </a>
+                    <a href="assets/KrishPathakResume.pdf" download class="btn btn-ghost">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Download résumé
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <a href="https://github.com/Krish7941">github/Krish7941</a>
+                    <span class="sep">/</span>
+                    <a href="https://www.linkedin.com/in/krish-pathak-687963294/">linkedin/krish-pathak</a>
+                    <span class="sep">/</span>
+                    <span>Firozabad, UP</span>
+                </div>
+            </div>
+
+            <div class="hero-card-wrap reveal in">
+                <div class="editor">
+                    <div class="editor-bar">
+                        <div class="editor-dots"><span></span><span></span><span></span></div>
+                        <div class="editor-tab" style="margin-bottom:0;">krish.me</div>
+                    </div>
+                    <img src="assets/Snapchat-1400874536_processed.png" alt="Portrait of Krish Pathak"
+                        class="hero-photo">
+                    <div class="hero-caption">
+                        <span id="typeLine">const role = "Designer &amp; Developer";</span>
+                        <span class="status"><span class="pulse"></span>online</span>
+                    </div>
+                </div>
+                <div class="hero-float">
+                    <span class="tok-com">// workflow</span><br>
+                    <span class="tok-str">"AI-assisted prototyping, human-refined UI"</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section id="about" class="container section">
+            <div class="section-head reveal">
+                <div class="eyebrow">01 — about</div>
+                <h2 class="section-title">whoAmI</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="editor reveal">
+                    <div class="editor-bar">
+                        <div class="editor-dots"><span></span><span></span><span></span></div>
+                        <div class="editor-tab" style="margin-bottom:0;">journey.md</div>
+                    </div>
+                    <div class="editor-body about-text">
+                        <p><span class="tok-com">// origin</span>I'm Krish, a passionate and creative web developer
+                            currently pursuing my B.Tech in Computer Science at GLA University. I enjoy building
+                            responsive, user-friendly websites that blend clean design with smooth functionality.</p>
+                        <p><span class="tok-com">// foundation</span>Strong grounding in HTML, CSS, JavaScript and
+                            Tailwind CSS — always learning, and currently exploring modern frameworks to stay ahead in
+                            the
+                            field.</p>
+                        <p><span class="tok-com">// beyond code</span>I'm also a certified prompt engineer, which
+                            sharpens how effectively I work with AI tools to build creative, efficient solutions.</p>
+                        <p><span class="tok-com">// philosophy</span>I love turning ideas into real, functional products
+                            — a portfolio, an e-commerce site, an interactive web app — and take pride in work that's
+                            both visually sharp and technically sound. I also use AI tools like Claude, ChatGPT and GitHub Copilot to speed up prototyping and sharpen UI details — always directing and refining the output myself rather than accepting it as-is.</p>
+                        <p><span class="tok-com">// beyond the code</span>I edit videos in my spare time — an interest
+                            that sharpens the same eye for timing, transitions and visual detail I bring into UI design.
+                        </p>
+                        <div class="hero-actions" style="margin-top:8px;">
+                            <a href="#contact" class="btn btn-primary">Get in touch</a>
+                            <a href="assets/resume.pdf" download class="btn btn-ghost">Download résumé</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-6 d-flex justify-content-center align-items-center mt-4 mb-2">
-                    <div class="flip-container me-3mb-3">
-                        <a href="https://www.linkedin.com/in/krish-pathak-687963294/">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img src="Snapchat-1400874536_processed.png" class="img-fluid  myim"
-                                        alt="Front Image">
-                                </div>
-                                <div class="back">
-                                    <img src="my pic.jpg" class="img-fluid  myim" alt="Back Image">
+
+                <div class="facts reveal">
+                    <div class="fact-row"><span class="fact-label">EDUCATION</span><span class="fact-value">B.Tech,
+                            Computer Science<br>GLA University</span></div>
+                    <div class="fact-row"><span class="fact-label">FOCUS</span><span class="fact-value">Frontend
+                            Development</span></div>
+                    <div class="fact-row"><span class="fact-label">BASED IN</span><span class="fact-value">Firozabad,
+                            Uttar Pradesh</span></div>
+                    <div class="fact-row"><span class="fact-label">CERTIFIED IN</span><span class="fact-value">Full
+                            Stack Web Dev, Generative AI, Prompt Engineering</span></div>
+                    <div class="fact-row"><span class="fact-label">STATUS</span><span class="fact-value"
+                            style="color:var(--teal)">Open to opportunities</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SKILLS ============ -->
+        <section id="skills" class="container section">
+            <div class="section-head reveal">
+                <div class="eyebrow">02 — skills</div>
+                <h2 class="section-title">Tools &amp; technologies</h2>
+                <p class="section-sub">What I reach for when turning a design into a working interface.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="imp"><span class="tok-kw">import</span> { <span class="tok-str">Frontend</span> } <span
+                            class="tok-kw">from</span> <span class="tok-str">'./core'</span></div>
+                    <h4>Frontend Development</h4>
+                    <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Tailwind
+                            CSS</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="imp"><span class="tok-kw">import</span> { <span class="tok-str">Design</span> } <span
+                            class="tok-kw">from</span> <span class="tok-str">'./ux'</span></div>
+                    <h4>UI / UX Design</h4>
+                    <div class="skill-tags"><span>Figma</span><span>Dribbble</span><span>UX Pilot</span></div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="imp"><span class="tok-kw">import</span> { <span class="tok-str">Logic</span> } <span
+                            class="tok-kw">from</span> <span class="tok-str">'./cs'</span></div>
+                    <h4>Backend / Databases</h4>
+                    <div class="skill-tags"><span>Node.js</span><span>Express</span><span>REST
+                            APIs</span><span>MySQL</span><span>MongoDB</span></div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="imp"><span class="tok-kw">import</span> { <span class="tok-str">Tools</span> } <span
+                            class="tok-kw">from</span> <span class="tok-str">'./dev'</span></div>
+                    <h4>Version Control &amp; Tools</h4>
+                    <div class="skill-tags"><span>Git &amp; GitHub</span><span>VS
+                            Code</span><span>Postman</span><span>npm</span><span>Vite</span></div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="imp"><span class="tok-kw">import</span> { <span class="tok-str">Prompting</span> } <span
+                            class="tok-kw">from</span> <span class="tok-str">'./ai'</span></div>
+                    <h4>AI Prompting</h4>
+                    <div class="skill-tags"><span>AI Tools</span><span>UI Iteration</span><span>Creative Writing</span><span>Technical Writing</span><span>Iterative Testing</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TECH STRIP ============ -->
+        <div class="tech-strip">
+            <div class="tech-track" id="techTrack">
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/html5/F2A93B" alt="">HTML5</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/css3/57C7B8" alt="">CSS3</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/javascript/e0c341" alt="">JavaScript</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/bootstrap/C792EA" alt="">Bootstrap</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/git/E36970" alt="">Git</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/python/F2A93B" alt="">Python</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/figma/57C7B8" alt="">Figma</div>
+                <!-- duplicate set for seamless loop -->
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/html5/F2A93B"
+                        alt="">HTML5</div>
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/css3/57C7B8" alt="">CSS3
+                </div>
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/javascript/e0c341"
+                        alt="">JavaScript</div>
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/bootstrap/C792EA"
+                        alt="">Bootstrap</div>
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/git/E36970" alt="">Git
+                </div>
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/python/F2A93B"
+                        alt="">Python</div>
+                <div class="tech-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/figma/57C7B8"
+                        alt="">Figma</div>
+            </div>
+        </div>
+
+        <!-- ============ PROJECTS ============ -->
+        <section id="projects" class="container section">
+            <div class="section-head reveal">
+                <div class="eyebrow">03 — projects</div>
+                <h2 class="section-title">Featured work</h2>
+                <p class="section-sub">A few builds from the repo — real code, real deploys.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- TaskFlow -->
+                <div class="proj-card reveal">
+                    <div class="proj-head"><span>taskflow/</span><span>public</span></div>
+                    <div class="proj-body">
+                        <h4>TaskFlow</h4>
+                        <p>A full-stack task management app with a React frontend and an Express + MongoDB Atlas backend
+                            — supports boards, lists, tasks and JWT-based auth.</p>
+                        <div class="proj-langs">
+                            <span class="lang-tag"><span class="lang-dot" style="background:#82AAFF"></span>React</span>
+                            <span class="lang-tag"><span class="lang-dot"
+                                    style="background:#e0c341"></span>Express</span>
+                            <span class="lang-tag"><span class="lang-dot"
+                                    style="background:#57C7B8"></span>MongoDB</span>
+                            <span class="lang-tag"><span class="lang-dot" style="background:#C792EA"></span>Vite</span>
+                        </div>
+                        <a href="https://github.com/lakshita3103/task-management-webapp" class="proj-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.79.57.1.78-.25.78-.55v-2.15c-3.17.69-3.84-1.36-3.84-1.36-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.68 5.34-5.22 5.62.41.36.77 1.07.77 2.15v3.19c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z" />
+                            </svg>
+                            Get code
                         </a>
                     </div>
                 </div>
-                </a>
-            </div>
-        </div>
-        </div>
-        </div>
-    </section>
-    <section id="about" class="container-fluid py-lg-5 py-sm-4 py-3 align-items-center about">
-        <div class="container">
-            <div class="row justify-content-center align-items-center mt-5 gy-4">
-                <div class="text-center animation-fade mb-4 mt-1">
-                    <h1>About Me</h1>
-                </div>
-                <div class="row mt-4 gy-3">
-                    <div class="col-lg-6">
-                        <div class="container aboutimg justify-content-start align-items-center mb-4">
 
+                <!-- MoodFit -->
+                <div class="proj-card reveal">
+                    <div class="proj-head"><span>moodfit/</span><span>public</span></div>
+                    <div class="proj-body">
+                        <h4>MoodFit — Virtual Stylist</h4>
+                        <p>A GenAI-based outfit recommender that reads your mood and real-time weather (via OpenWeather
+                            API) to suggest what to wear — built using AI-assisted prototyping to iterate quickly on the recommendation UI.</p>
+                        <div class="proj-langs">
+                            <span class="lang-tag"><span class="lang-dot" style="background:#F2A93B"></span>HTML</span>
+                            <span class="lang-tag"><span class="lang-dot" style="background:#57C7B8"></span>CSS</span>
+                            <span class="lang-tag"><span class="lang-dot"
+                                    style="background:#e0c341"></span>JavaScript</span>
+                            <span class="lang-tag"><span class="lang-dot"
+                                    style="background:#82AAFF"></span>Python</span>
                         </div>
-                    </div>
-                    <div class="col-lg-6 animation-right justify-content-start align-items-center pl-3">
-                        <h3>My Journey</h3>
-                        <p>
-                            Hi, I'm Krish, a passionate and creative web developer currently pursuing my B.Tech in
-                            Computer Science at GLA University. I enjoy building responsive and user-friendly websites
-                            that blend clean design with smooth functionality.</p>
-
-                        <p>I have a strong foundation in HTML, CSS, JavaScript, and Bootstrap. I'm always eager to
-                            learn and grow, and I plan to explore more modern web development frameworks in the near
-                            future to expand my skills and stay ahead in the tech world.</p>
-
-                        <p>I'm also a certified Prompt Engineer, which enhances my ability to work effectively with AI
-                            tools and generate creative, efficient solutions.</p>
-
-                        <p>I love turning ideas into real, functional web projects. Whether it’s a portfolio, an
-                            e-commerce website, or an interactive web app, I take pride in creating work that is both
-                            visually appealing and technically sound.</p>
-
-                        <p>Let’s connect and build something amazing together!</p>
-                        </p>
-                        <div class="row justify-content-start align-items-center">
-                            <div class="col-auto">
-                                <a href="#contact"><button type="submit" class="btn grad mb-1 mt-3">Get in Touch
-                                    </button></a>
-                            </div>
-                            <div class="col-auto">
-                                <a href="resume.pdf" download="resume.pdf"><button class="btn check mb-1 mt-3 ">Download
-                                        Resume</button></a>
-                            </div>
-                        </div>
+                        <a href="https://github.com/ZENINxOMEGA/Gen-Ai-Project" class="proj-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.79.57.1.78-.25.78-.55v-2.15c-3.17.69-3.84-1.36-3.84-1.36-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.68 5.34-5.22 5.62.41.36.77 1.07.77 2.15v3.19c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z" />
+                            </svg>
+                            Get code
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="skills"
-        class="container-fluid py-lg-5 py-sm-4 py-3 justify-content-center align-items-center skills mb-4  ">
-        <div class="container">
-            <div class="row animation-fade justify-content-center align-items-center mt-5 gy-4">
-                <div class="text-center mb-5">
-                    <h1>Skills & Technologies</h1>
+
+                <!-- Zenvyra -->
+                <div class="proj-card reveal">
+                    <div class="proj-head"><span>zenvyra/</span><span>public</span></div>
+                    <div class="proj-body">
+                        <h4>Zenvyra — Social Media App</h4>
+                        <p>A full-stack social platform built with Node.js, Express and MongoDB — register, post,
+                            like/unlike and edit content, with JWT-based authentication.</p>
+                        <div class="proj-langs">
+                            <span class="lang-tag"><span class="lang-dot"
+                                    style="background:#e0c341"></span>Node.js</span>
+                            <span class="lang-tag"><span class="lang-dot"
+                                    style="background:#57C7B8"></span>MongoDB</span>
+                            <span class="lang-tag"><span class="lang-dot" style="background:#F2A93B"></span>EJS</span>
+                            <span class="lang-tag"><span class="lang-dot" style="background:#C792EA"></span>Tailwind
+                                CSS</span>
+                        </div>
+                        <a href="https://github.com/Krish7941/Zenvyra---The-Social-media-Application" class="proj-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.79.57.1.78-.25.78-.55v-2.15c-3.17.69-3.84-1.36-3.84-1.36-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.68 5.34-5.22 5.62.41.36.77 1.07.77 2.15v3.19c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z" />
+                            </svg>
+                            Get code
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-4 justify-content-center align-items-center">
-                    <div class="card justify-content-center p-4">
-                        <div class="d-flex justify-content-start align-items-center mb-3">
-                            <div class="icon-container me-3">
-                                <i class="fa-solid fa-star" style="color:#ffffff"></i>
-                            </div>
-                            <h4>FrontEnd Development</h4>
+            </div>
+        </section>
+
+        <!-- ============ CERTIFICATES ============ -->
+        <section id="certificates" class="container section">
+            <div class="section-head reveal">
+                <div class="eyebrow">04 — certificates</div>
+                <h2 class="section-title">Credentials</h2>
+                <p class="section-sub">Click a card to view the full certificate.</p>
+            </div>
+
+            <div class="cert-grid">
+                <div class="cert-card reveal" data-cert="assets/cert-sql.png"
+                    data-title="HackerRank SQL (Intermediate)">
+                    <div class="cert-img-wrap"><img src="assets/Screenshot 2026-07-26 140113.png"
+                            alt="HackerRank SQL (Intermediate) certificate"></div>
+                    <div class="cert-body">
+                        <h5>HackerRank SQL (Intermediate)</h5>
+                        <p>HackerRank · 2026</p>
+                        <span class="cert-view">View certificate →</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal" data-cert="assets/Screenshot 2025-07-26 113449.png"
+                    data-title="Generative AI">
+                    <div class="cert-img-wrap"><img src="assets/Screenshot 2025-07-26 113449.png"
+                            alt="Generative AI certificate"></div>
+                    <div class="cert-body">
+                        <h5>Generative AI</h5>
+                        <p>GLA × Coding Blocks · 2025</p>
+                        <span class="cert-view">View certificate →</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal" data-cert="assets/Screenshot 2025-04-09 224402.png"
+                    data-title="Prompt Engineering for ChatGPT">
+                    <div class="cert-img-wrap"><img src="assets/Screenshot 2025-04-09 224402.png"
+                            alt="Prompt Engineering for ChatGPT certificate"></div>
+                    <div class="cert-body">
+                        <h5>Prompt Engineering for ChatGPT</h5>
+                        <p>Great Learning · 2025</p>
+                        <span class="cert-view">View certificate →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section id="contact" class="container section">
+            <div class="section-head reveal">
+                <div class="eyebrow">05 — contact</div>
+                <h2 class="section-title">Let's build something</h2>
+                <p class="section-sub">Looking for a developer, have a question, or just want to connect? Reach out
+                    below.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="contact-line">
+                        <div class="contact-icon">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16v16H4z" opacity="0" />
+                                <path d="M22 6l-10 7L2 6" />
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                            </svg>
                         </div>
                         <div>
-                            <ul>
-                                <li class="mb-1">HTML</li>
-                                <li class="mb-1">CSS</li>
-                                <li class="mb-1">Javascript</li>
-                                <li class="mb-2">React</li>
-                            </ul>
+                            <div class="contact-label">EMAIL</div><a class="contact-value"
+                                href="mailto:krishpathak79@gmail.com">krishpathak79@gmail.com</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 justify-content-center align-items-center">
-                    <div class="card justify-content-center p-4">
-                        <div class="d-flex justify-content-start align-items-center mb-3">
-                            <div class="icon-container me-3">
-                                <i class="fa-solid fa-star" style="color:#ffffff"></i>
-                            </div>
-                            <h4>UI/UX Design</h4>
+                    <div class="contact-line">
+                        <div class="contact-icon">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z" />
+                            </svg>
                         </div>
                         <div>
-                            <ul>
-                                <li class="mb-1">Figma</li>
-                                <li class="mb-1">Responsive Design</li>
-                                <li class="mb-1">Layout</li>
-                                <li class="mb-2">components</li>
-                            </ul>
+                            <div class="contact-label">PHONE</div><a class="contact-value" href="tel:+918273104640">+91
+                                82731 04640</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 justify-content-center align-items-center ">
-                    <div class="card justify-content-center p-4">
-                        <div class="d-flex justify-content-start align-items-center mb-3">
-                            <div class="icon-container me-3">
-                                <i class="fa-solid fa-star" style="color:#ffffff"></i>
-                            </div>
-                            <h4>Programming</h4>
+                    <div class="contact-line">
+                        <div class="contact-icon">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
                         </div>
                         <div>
-                            <ul>
-                                <li class="mb-1">C</li>
-                                <li class="mb-1">Python</li>
-                                <li class="mb-1">Java</li>
-                                <li class="mb-2">Java with DSA</li>
-                            </ul>
+                            <div class="contact-label">LOCATION</div><span class="contact-value">Firozabad, Uttar
+                                Pradesh</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 justify-content-center align-items-center">
-                    <div class="card justify-content-center p-4">
-                        <div class="d-flex justify-content-start align-items-center mb-3">
-                            <div class="icon-container me-3">
-                                <i class="fa-solid fa-star" style="color:#ffffff"></i>
-                            </div>
-                            <h4>AI Prompting</h4>
-                        </div>
-                        <div>
-                            <ul>
-                                <li class="mb-1">AI tools and platforms</li>
-                                <li class="mb-1">Creative writing</li>
-                                <li class="mb-1">Technical writing</li>
-                                <li class="mb-2">Iterative testing</li>
-                            </ul>
-                        </div>
+
+                    <div class="social-row">
+                        <a href="https://github.com/Krish7941" aria-label="GitHub"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.79.57.1.78-.25.78-.55v-2.15c-3.17.69-3.84-1.36-3.84-1.36-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.73 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.68 5.34-5.22 5.62.41.36.77 1.07.77 2.15v3.19c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/in/krish-pathak-687963294/" aria-label="LinkedIn"><svg
+                                width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                            </svg></a>
+                        <a href="https://x.com/kris87197" aria-label="X / Twitter"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.9 2H22l-7.6 8.68L23.3 22h-6.9l-5.4-6.6L4.8 22H1.6l8.1-9.3L1 2h7l4.9 6.02L18.9 2zm-1.2 18h1.9L7.4 4h-2l12.3 16z" />
+                            </svg></a>
+                        <a href="mailto:krishpathak79@gmail.com" aria-label="Email"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="M22 6l-10 7L2 6" />
+                            </svg></a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="tech-stack "
-        class="container-fluid py-lg-5 py-sm-4 py-3 justify-content-center align-items-center tech-stack mb-5">
-        <div class="container">
-            <h1 class="mb-5 text-center">My Tech Stack</h1>
-            <div class="row justify-content-center align-items-center mt-5 g-5">
 
-                <div class="col-4 col-md-2 tech1">
-                    <img src="https://cdn.simpleicons.org/html5/ff4500" alt="HTML5" class="img-fluid tech-icon">
-                </div>
-
-                <div class="col-4 col-md-2 tech2">
-                    <img src="text (1).png
-                    " alt="CSS3" class="img-fluid tech-icon">
-                </div>
-
-                <div class="col-4 col-md-2 tech3">
-                    <img src="https://cdn.simpleicons.org/javascript/f7df1e" alt="JavaScript"
-                        class="img-fluid tech-icon">
-                </div>
-
-                <div class="col-4 col-md-2 tech4">
-                    <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="Bootstrap" class="img-fluid tech-icon">
-                </div>
-
-                <div class="col-4 col-md-2 tech5">
-                    <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="img-fluid tech-icon">
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <section id="projects" class="container-fluid projects py-lg-5 py-sm-4 py-3">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-5">
-                <div class="col-12 mb-5">
-                    <h1>Featured Projects</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="cardp h-100 d-flex flex-column">
-                        <div class="project-image apple"></div>
-                        <div class="project-desc p-4">
-                            <h4>Apple Landing Page</h4>
-                            <p>A sleek and modern Apple e-commerce landing page showcasing the latest products with
-                                clean layout, and shopping experience.</p>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                            </ul>
-                            <div class="text-center m-3">
-                                <a href="https://github.com/Krish7941/apple">
-                                    <button class="btn grad">Get Code</button>
-                                </a>
-                            </div>
-                        </div>
+                <div class="editor reveal">
+                    <div class="editor-bar">
+                        <div class="editor-dots"><span></span><span></span><span></span></div>
+                        <div class="editor-tab" style="margin-bottom:0;">send-message.js</div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="cardp h-100 d-flex flex-column">
-                        <div class="project-image ws"></div>
-                        <div class="project-desc p-4">
-                            <h4>WsCubeTech Landing Page</h4>
-                            <p>A dynamic and conversion-focused landing page for WsCube Tech, showcasing digital
-                                marketing services and carrer opportunities.</p>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Bootstrap</li>
-                            </ul>
-                            <div class="text-center m-3">
-                                <a href="https://github.com/Krish7941/Wscube">
-                                    <button class="btn grad">Get Code</button>
-                                </a>
-                            </div>
+                    <form action="https://formspree.io/f/xwpopaka" method="post" class="editor-body" id="contactForm">
+                        <div class="form-field">
+                            <label for="name">name</label>
+                            <input type="text" id="name" name="Name" placeholder="Your name" required>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="cardp h-100 d-flex flex-column">
-                        <div class="project-image port"></div>
-                        <div class="project-desc p-4">
-                            <h4>Portfolio</h4>
-                            <p>A responsive portfolio website showcasing projects, skills and an experience to learn
-                                with full of responsive designs.</p>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Bootstrap</li>
-                            </ul>
-                            <div class="text-center m-3">
-                                <a href="https://github.com/Krish7941/My-portfolio">
-                                    <button class="btn grad">Get Code</button>
-                                </a>
-                            </div>
+                        <div class="form-field">
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="Email" placeholder="you@example.com" required>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mt-4 mb-5">
-                    <button class="btn grad">View all Projects</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="certificates" class="py-lg-5 py-sm-4 py-3">
-        <div class="container">
-            <h1 class="text-center mb-4">Certificates</h1>
-            <div class="row g-4 mt-5">
-                <div class="col-md-4">
-                    <div class="card cert1 h-90">
-                        <img src="Screenshot 2025-07-27 103606.png" class="card-img-top" alt="Certificate 2">
-                        <div class="card-body cert1 text-center">
-                            <h5 class="card-title">Full Stack Web Development</h5>
-                            <p class="card-text">FCC , IIT Hyderabad • 2025</p>
-                            <button class="btn grad" data-bs-toggle="modal" data-bs-target="#certModal2">
-                                View Certificate
+                        <div class="form-field">
+                            <label for="message">message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..."
+                                required></textarea>
+                        </div>
+                        <div class="submit-row">
+                            <button type="submit" class="btn btn-primary">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                                Send message
                             </button>
+                            <span class="form-status" id="formStatus"></span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card cert2 h-90">
-                        <img src="Screenshot 2025-07-26 113449.png" class="card-img-top" alt="Certificate 1">
-                        <div class="card-body cert2 text-center">
-                            <h5 class="card-title">Generative AI</h5>
-                            <p class="card-text">GLA x Coding Blocks . 2025</p>
-                            <button class="btn grad" data-bs-toggle="modal" data-bs-target="#certModal1">
-                                View Certificate
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card cert3 h-90">
-                        <img src="Screenshot 2025-04-09 224402.png" class="card-img-top" alt="Certificate 3">
-                        <div class="card-body cert3 text-center">
-                            <h5 class="card-title">Prompt Engineering for ChatGPT</h5>
-                            <p class="card-text">Great Learning • 2025</p>
-                            <button class="btn grad" data-bs-toggle="modal" data-bs-target="#certModal3">
-                                View Certificate
-                            </button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </div>
-        <!-- Modal 1 -->
-        <div class="modal fade" id="certModal1" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content" style="background: rgba(0,0,0,0.566);">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title text-white">Generative AI</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body d-flex justify-content-center align-items-center">
-                        <img src="Screenshot 2025-07-26 113449.png" class="img-fluid rounded shadow-lg" alt="Full Certificate">
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <!-- Modal 2 -->
-        <div class="modal fade" id="certModal2" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content" style="background: rgba(0,0,0,0.566);">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title text-white">Full Stack Web Development</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body d-flex justify-content-center align-items-center">
-                        <img src="Screenshot 2025-07-27 103606.png" class="img-fluid rounded shadow-lg" alt="Full Certificate">
-                    </div>
-                </div>
-            </div>
-        </div>
+    </main>
 
-        <!-- Modal 3 -->
-        <div class="modal fade" id="certModal3" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content" style="background: rgba(0, 0, 0, 0.566);">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title text-white">Prompt Engineering for ChatGPT</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body d-flex justify-content-center align-items-center">
-                        <img src="Screenshot 2025-04-09 224402.png" class="img-fluid rounded shadow-lg" alt="Full Certificate">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="container-fluid touch py-lg-5 py-sm-4 py-3 justify-content-center align-items-center">
-        <div class="container">
-            <div class="row justify-content-center align-items-center gy-4">
-                <div class="text-center mb-4">
-                    <h1>Get In Touch</h1>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-lg-6 ta justify-content-start align-items-start mb-5 gy-4">
-                        <div>
-                            <h3 class="mb-3">Contact Information</h3>
-                            <p class="mb-5">Feel free to reach out if you're looking for a developer, have a question,
-                                or just want
-                                to connect.</p>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="icon me-3">
-                                <img src="envelope.png" alt="">
-                            </div>
-                            <div>
-                                <h5>Email</h5>
-                                <a href="mailto:krishpathak79@gmail.com">krishpathak79@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="icon flex me-3">
-                                <img src="phone-call.png" alt="">
-                            </div>
-                            <div>
-                                <h5>Phone</h5>
-                                <a href="tel:8273104640">+91 8273104640</a>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="icon me-3">
-                                <img src="marker.png" alt="">
-                            </div>
-                            <div>
-                                <h5>Location</h5>
-                                <a href="">Firozabad , Uttar Pradesh</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <form action="https://formspree.io/f/xwpopaka" method="post"
-                            class="bannerform justify-content-around align-items-center">
-                            <h4>Send a message</h4>
-                            <p class="mb-3">Fill out the form below and I'll get back to you as soon as possible.</p>
-                            <div class="mb-4">
-                                <label for="exampleInputName1" class="form-label">Name</label>
-                                <input type="username" class="form-control" name="Name" id="exampleInputNAme1">
-                            </div>
-                            <div class="mb-4">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="Email" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                </div>
-                            </div>
-                            <div class="mb-5">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea name="message" id="message" class="form-control "
-                                    placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="flex justify-content-center align-items-center">
-                                <button type="submit"
-                                    class="btn grad formb d-flex justify-content-center mb-3 mt-3 w-100">Send
-                                    message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="container-fluid foot py-lg-5 py-sm-4 py-3">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <div class="align-items-center gap-3">
-                <h3 class="mb-0">Krish Pathak</h3>
-                <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
-            </div>
-            <div class="d-flex fi gap-3 mt-3 mt-md-0">
-                <a href="https://github.com/Krish7941"><i class="fa-brands fa-github fa-lg"
-                        style="color: #e4e1e1;"></i></a>
-                <a href="https://www.linkedin.com/in/krish-pathak-687963294/"><i class="fa-brands fa-linkedin-in fa-lg"
-                        style="color: #e4e2e2;"></i></a>
-                <a href="https://x.com/kris87197"><i class="fa-brands fa-x-twitter fa-lg"
-                        style="color: #e4e4e4;"></i></a>
-                <a href="mailto:krishpathak79@gmail.com"><i class="fa-regular fa-envelope fa-lg"
-                        style="color: #e4dfdf;"></i></a>
-            </div>
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>Krish Pathak <span class="made">· © 2026 All rights reserved</span></p>
+            <p class="made">Open to new opportunities</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+        </svg>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-inner">
+            <div class="lightbox-bar">
+                <span id="lightboxTitle">certificate.png</span>
+                <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+            </div>
+            <div class="lightbox-body">
+                <img src="" alt="" id="lightboxImg">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
